@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">                 <!--язык, который использован на сайте-->
+<!--HEAD------------------------------------------------>
+<head>                           <!--информация в этом блоке не видна на сайте и испольуется в поисковиках браузера-->
+  <meta charset="UTF-8">         <!--тип кодировка шрифта-->
+  <title>ITWord</title>  <!--название страницы, видно в браузере-->    
+  <!--подключаем шрифты --------------------------------->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@400;500;600&family=Josefin+Sans&display=swap" rel="stylesheet">
+  <!--favicon-------------------------------------------->
+  <!----------------------------------------------------->
+  <!-- подключаем стили -->
+  <link rel="stylesheet" href="styles/normalize.css">  <!--подключаем номалайз-->
+  <link rel="stylesheet" href="styles/style.css">      <!--подключение файла CSS-->
+</head>
+<!--BODY------------------------------------------------->
+<body class="page">
+    <!--ШАПКА страницы ---------------------------------->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header__parent"> 
+
+                <div class="page-header__logo">
+                    <div class="header-logo__box">
+                        <img class="logo-box__img" src="imgs/icons/logo-head-person.svg" alt="голова" height="80">
+                    </div>
+                </div>
+
+                <div class="page-header__title">
+                    <p class="header-title__title" lang = "en">ITWord - </p>
+                    <p class="header-title__text">от буквы к слову</p>
+                </div>               
+            </div>
+
+        </div>                
+    </header>
+
+    <!--КОНТЕНТ страницы ---------------------------------->
+    <main>
+    <!--СЕКЦИЯ приветствие, знакомство: page-section__welcome = index.html-->
+        <section class="page-section__welcome">
+            <div class="container"> 
+                <div class="section__welcome">                    
+                    <h1 class="sectionwelcome__title">Приветствую тебя в моем <span>DOMe!</span></h1>
+                    <p>Познакомимся?</p>
+                    <label for="youname">Ты - </label>
+                    <input id="youname" type="text" value="" placeholder="nick..."></input>   <!--поле ввода имени игрока-->
+                    <button>Ok</button>
+                    <p class="namehost"></p>                                                       <!--поле генерации имени хозяки игры: 'Сегодня я –...'-->
+                    <p class="story"></p>                                                       <!--поле генерации приветствия: 'И так,  XMEN, можешь начать с правила игры,'-->
+                    <a href="#start"></a>                                               <!--поле генерации ссылки на начало игры: 'А можешь уже жать на кнопку…'-->
+                </div>              
+            </div>
+        </section>
+
+        <!--СЕКЦИЯ правила игры: page-section__orderplay = index.html-->
+        <section class="page-section__orderplay">
+            <div class="container"> 
+                <div class="section__orderplay">                                    
+                    <!-- accordeon -->
+                    <ul class="orderplay__accordeon-list">     <!--accordeon-list --обертка всего аккардиона, список для вопрос-ответ / аккорион-->
+                        <li class="orderplay__accordeon__item faq-card">  <!--accordeon__item faq-card-->
+                            <div class="faq-card__toggle" role="button" tabindex="0" onclick="this.classList.toggle('faq-card__toggle--opened')">   <!--строка 1 в карточке: Заголовок + переключатель карточки форма вопрос ответ. Назначаем св-ва: role="button" (чтобы оживить div как кнопку); role="button" tabindex="0" (управление с клавы; 'faq-card__toggle--opened' (класс для стилизации открытой карточки; onclick="this.classList.toggle('faq-card__toggle--opened') (команда JS для взаимодействия пользователя с сайтом «нажать»-->
+                                <div>Правила игры</div>   <!--Заголовок-вопрос-->
+                                <i class="faq-card__icon"><img src="imgs/icons/plus.svg" height="40"></i>  <!--иконку-кнопку можно добавить 3спп: 1) svg (через тег i); 2) заливка бакграунд; 1) тег img (не очень уместен);-->
+                            </div>
+                            <div class="faq-card__content">   <!--обертка div для текста, открытой части аккордиона (ответ)-->
+                                <p>Неведомая сила заколдовала слово, используемое IT-специалистами, дабы проверить их коммуникативные навыки.
+                                    <br>Используя свою интуицию и навыки, призови <span>букву из русского алфавита</span> и верни слово людям.
+                                <p> У тебя есть право на ошибку, но после <span>5 ошибки</span> наступает поражение.
+                                    <br>В конце каждого раунда слово явиться тебе.</p>
+                                </p>
+                                <p>Начало колдовства с шага <span>«Поехали!».</span>
+                                    <br>В поле ввести букву и подтвердить свой выбор.
+                                </p>
+                                <p>Путеводными звездами будут:
+                                    <ul>
+                                        <li>Раунд <span>(Round)</span>, количество слов.</li>
+                                        <li>Результат <span>(0 : 0)</span>, победы : поражения.</li>
+                                        <li>Ошибка <span>(Error)</span>, количество неверно названных букв. <br>Внимание! Пятая ошибка – поражение.</li>
+                                        <li>Коллекция  названных букв <span>(Collection of letters)</span>, угаданных <span>(TRUE)</span> и ошибочно названных <span>(FALSE)</span>.</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>          
+                </div>  
+            
+            </div>
+        </section>
+
+         <!--СЕКЦИЯ запуск игры: page-section__play = index.html-->
+         <section class="page-section__play">             
+            <div class="container"> 
+                <div class="section-play flex__sp-betw">
+                <!--Кнопка запуска игры-->
+                    <div class="section-play__start">         
+                        <a name="start"></a>                            <!--ссылка перехода на раздел старта игры-->          
+                        <button>Поехали!</button>         <!--кнопка начало игры-->                    
+                    </div>  
+
+                <!--Таймер игры-->
+                    <div class="section-play__timer">
+                        <form name=timerplay__form>    <!--  MyForm-->
+                            <input class="timerplay" name=stopwatch size=10 value="00:00:00.00" disabled>  
+                            <input class="timerplay-btn" type=button value="Start/Stop" onclick="StartStop()"> 
+                            <input class="timerplay-btn" type=button value="Reset" onclick="ClearСlock()">  
+                    </form>
+                    </div>   
+                </div>
+                
+                <div class="section-play">                   
+                    <!--Счетчик раунд : угадано -->
+                    <div class="section-play__countplay">
+                        <div class="countplay__round">
+                            <div class="countplay-round__title">Round :</div>
+                            <div class="countplay-round__order">0</div>
+                        </div>
+                        <ul class="countplay-result__list">                            
+                            <li class="countplay-result__true">0</li>                            
+                            <li class="countplay-result__false">0</li>
+                        </ul>
+                    </div>
+                     <!--Счетчик ошибок-->
+                    <div class="section-play__counterror">
+                        <form>
+                            <label class="count-error__label">Error
+                                <input type="range" name="count-error" min="0" max="5" step="1" value="0" disabled>   
+                                <div></div>                             
+                            </label>                            
+                        </form>                        
+                    </div>
+                </div>
+
+                <div class="section-play disp__block">
+                    <!--ТЕСТ вставка массива слова выбранного рандомно --> 
+                    <div class="testarr">Слово-вопрос :</div>
+                    <div class="testletter">Слово по буквам:</div>  
+                    <div class="testCont">Счетчик ошибок:</div>
+                    <div class="testContTrue">Счетчик верных букв:</div>  
+                    <!--КОНЕЦ ТЕСТ-->                
+
+                    <!--Показываем загаданое слово -->                
+                    <div class="section-play__quizword">    
+                        <div class="quizword__title">
+                            ITWord 
+                        </div>
+                        <!--счетчик всего букв в слове : открыто букв-->
+                        <ul class="quizword-count__list">      
+                            <li class="quizword-count__title">of letters</li>                      
+                            <li class="quizword-count__allleters">0</li>
+                            <li class="quizword-count__symbol">:</li>
+                            <li class="quizword-count__trueleter">0</li>
+                        </ul>
+                        <!--заставка слова __list-screen-->
+                        <ul class="quizword-screen__list">                             
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                            <li>6</li>
+                            <li>7</li>
+                            <li>8</li>
+                            <li>9</li>
+                            <li>10</li>                                                                                  
+                        </ul>                           
+                        <ul class="quizword-question__list">                           
+                        </ul>    
+                    </div>   
+                    <!--Вод буквы игроком --> 
+                    <div class="section-play__quiz-letter">
+                        <!--<form action="">-->                   <!--ОШИБКА: при использовании тега form не работает обработчик событий-->
+                            <label for="letter" class="quiz-letter__label">Enter</label>
+                                <input id="letter" class="quiz-letter__input" type="text" value="" placeholder="Letter..." name="сервер" disabled>   <!--pattern="" проверка ввода буквы на русском языке-->
+                                <button class="quiz-letter__btn">Ok</button> 
+                                <!--<input id="letter" class="quiz-letter__btn" type="submit" value="Ok">-->
+                           
+                        <!--</form>-->                   
+                    </div>   
+                </div>
+
+                <div class="section-play">
+                    <!--Коллекция названных букв-->                    
+                    <div class="section-play__wordcollection">
+                        <div class="wordcollection__title">
+                            Сollection of letters
+                        </div>
+                        <div class="wordcollection__true"> 
+                            <div class="wordcollection-true__title">
+                                True:
+                            </div>
+                            <ul class="wordcollection-true__list">                             
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>                                                                                                                                                               
+                            </ul>
+                        </div>     
+                        <div class="wordcollection__false"> 
+                            <div class="wordcollection-false__title">
+                                False:
+                            </div>
+                            <ul class="wordcollection-false__list">                             
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>                                                                                                                                                                    
+                            </ul>
+                        </div>     
+                    </div>
+                </div>
+
+                <div class="section-play">
+                    <!--Словарь, отображение слова-вопрос-->                    
+                    <div class="section-play__dictionary">
+                        <p class="dictionary__word"></p>
+                        <a class="dictionary__wordLink" href="#" target="_blank">                            
+                        </a>
+                    </div>
+                </div>   
+
+            </div>
+        </section>
+
+
+        
+
+    </main>
+ <!--ПОДВАЛ страницы ---------------------------------->
+    <div class="page-footer__main">                   
+        <div class="container">
+            <div class="page-footer__row">
+            </div>
+        </div> 
+    </div>  
+
+    <script src="script.js"></script>   
+
+</body>    
+</html> 
