@@ -43,13 +43,19 @@
             <div class="container"> 
                 <div class="section__welcome">                    
                     <h1 class="sectionwelcome__title">Приветствую тебя в моем <span>DOMe!</span></h1>
-                    <p>Познакомимся?</p>
-                    <label for="youname">Ты - </label>
-                    <input id="youname" type="text" value="" placeholder="nick..."></input>   <!--поле ввода имени игрока-->
-                    <button>Ok</button>
-                    <p class="namehost"></p>                                                       <!--поле генерации имени хозяки игры: 'Сегодня я –...'-->
-                    <p class="story"></p>                                                       <!--поле генерации приветствия: 'И так,  XMEN, можешь начать с правила игры,'-->
-                    <a href="#start"></a>                                               <!--поле генерации ссылки на начало игры: 'А можешь уже жать на кнопку…'-->
+                    <!--<form action="">-->   
+                        <p>Познакомимся?</p>                        
+                        <label for="youname">Ты - </label>
+                        <!--поле ввода имени игрока-->
+                        <input id="youname" type="text" value="" 
+                            placeholder="nick..." 
+                            pattern="^[а-яёА-ЯЁa-zA-Z_0-9\s]{0,16}$"                     
+                        >   <!--title="Nick может состоять: ru, en, _, пробел, длиной до 16 знаков"   - вставить в input для валидации -->
+                        <button>Ok</button>        <!--<button onclick="checkValidityNamePlayer();"> - при клике на кнопку проверяем валидацию инпута-->
+                        <p class="namehost"></p>                            <!--поле генерации имени хозяки игры: 'Сегодня я –...'-->
+                        <p class="story"></p>                               <!--поле генерации приветствия: 'И так,  XMEN, можешь начать с правила игры,'-->
+                        <a href="#start"></a>                               <!--поле генерации ссылки на начало игры: 'А можешь уже жать на кнопку…'-->
+                    <!--</form>-->
                 </div>              
             </div>
         </section>
@@ -90,13 +96,13 @@
             </div>
         </section>
 
-         <!--СЕКЦИЯ запуск игры: page-section__play = index.html-->
+         <!--СЕКЦИЯ запуск игры, кнопка "Поехали": page-section__play = index.html-->
          <section class="page-section__play">             
             <div class="container"> 
                 <div class="section-play flex__sp-betw">
                 <!--Кнопка запуска игры-->
                     <div class="section-play__start">         
-                        <a name="start"></a>                            <!--ссылка перехода на раздел старта игры-->          
+                        <a name="start"></a>              <!--ссылка перехода на раздел старта игры-->          
                         <button>Поехали!</button>         <!--кнопка начало игры-->                    
                     </div>  
 
@@ -139,6 +145,7 @@
                     <div class="testletter">Слово по буквам:</div>  
                     <div class="testCont">Счетчик ошибок:</div>
                     <div class="testContTrue">Счетчик верных букв:</div>  
+                    <div class="testFrrletters">Массив введенных букв:</div>
                     <!--КОНЕЦ ТЕСТ-->                
 
                     <!--Показываем загаданое слово -->                
@@ -146,7 +153,7 @@
                         <div class="quizword__title">
                             ITWord 
                         </div>
-                        <!--счетчик всего букв в слове : открыто букв-->
+                        <!--счетчик = всего букв в слове : открыто букв-->
                         <ul class="quizword-count__list">      
                             <li class="quizword-count__title">of letters</li>                      
                             <li class="quizword-count__allleters">0</li>
@@ -155,17 +162,17 @@
                         </ul>
                         <!--заставка слова __list-screen-->
                         <ul class="quizword-screen__list">                             
-                            <li>1</li>
-                            <li>2</li>
-                            <li>3</li>
-                            <li>4</li>
-                            <li>5</li>
-                            <li>6</li>
-                            <li>7</li>
-                            <li>8</li>
-                            <li>9</li>
-                            <li>10</li>                                                                                  
-                        </ul>                           
+                            <li class="quizword-screen__item-hover">1</li>
+                            <li class="quizword-screen__item-hover">2</li>
+                            <li class="quizword-screen__item-hover">3</li>
+                            <li class="quizword-screen__item-hover">4</li>
+                            <li class="quizword-screen__item-hover">5</li>
+                            <li class="quizword-screen__item-hover">6</li>
+                            <li class="quizword-screen__item-hover">7</li>
+                            <li class="quizword-screen__item-hover">8</li>
+                            <li class="quizword-screen__item-hover">9</li>
+                            <li class="quizword-screen__item-hover">10</li>                                                                                  
+                        </ul>                        
                         <ul class="quizword-question__list">                           
                         </ul>    
                     </div>   
@@ -173,9 +180,11 @@
                     <div class="section-play__quiz-letter">
                         <!--<form action="">-->                   <!--ОШИБКА: при использовании тега form не работает обработчик событий-->
                             <label for="letter" class="quiz-letter__label">Enter</label>
-                                <input id="letter" class="quiz-letter__input" type="text" value="" placeholder="Letter..." name="сервер" disabled>   <!--pattern="" проверка ввода буквы на русском языке-->
-                                <button class="quiz-letter__btn">Ok</button> 
-                                <!--<input id="letter" class="quiz-letter__btn" type="submit" value="Ok">-->
+                            <input id="letter" class="quiz-letter__input" type="text" value="" 
+                                placeholder="Letter..." name="сервер" 
+                                maxlength="1" pattern="^[а-яёА-ЯЁ]" disabled>               <!--pattern="" проверка ввода буквы на русском языке-->
+                            <button class="quiz-letter__btn" disabled>Ok</button> 
+                            <!--<input id="letter" class="quiz-letter__btn" type="submit" value="Ok">-->
                            
                         <!--</form>-->                   
                     </div>   
@@ -230,12 +239,9 @@
                 </div>   
 
             </div>
-        </section>
-
-
-        
-
+        </section>   
     </main>
+
  <!--ПОДВАЛ страницы ---------------------------------->
     <div class="page-footer__main">                   
         <div class="container">

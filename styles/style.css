@@ -6,80 +6,41 @@
     --color_base: rgba(252, 245, 251, 0.699);                /*#D1C4E9*/
     --color_title: #EDE7F6;
     --color_placeholder: #B39DDB;  
-    --color_placeholderDark: rgba(209, 196, 233, 0.342);                             /*#7E57C2*/
+    --color_placeholderDark: rgba(209, 196, 233, 0.342);     /*#7E57C2*/
     --color_border: rgb(92, 48, 212);
-    --color_stsrt: #ccb838f1;
+    --color_stsrt: #f1db4cd5;             /*#ccb838f1;*/
     --color_Error: #a31010;
-    --color_logo: #786a92;;
-    /*--color_logo: #8d88add2;*/  
-    /*--color_stsrt1: #faf8fc;*/
-
-
+    --color_logo: #b39ddb80;    
+   
     --font-size-base: 20px;       /*размер текста*/ 
     --font-siz-titleR1: 28px;       /*размер заголовка rus*/
     --font-siz-titleR2: 26px;       /*размер заголовка rus*/
     --font-siz-titleЕ: 36px;       /*размер заголовка en*/
     --font-siz-letter: 35px;       /*размер открытой буквы*/
-
-
-
-    --color_10: rgb(209, 196, 233, .2); 
-    --color_15: rgba(253, 218, 248, 0.034); 
-    --color_20: rgba(214, 178, 209, 0.7);
-    --color_25: rgba(207, 180, 204, 0.7);   
-    --color_35: rgba(192, 164, 188, 0.815);    
-    --color_40: rgba(243, 230, 241, 0.699);  
-    --color_1005: #401afafa;  /*текст*/
-   
-    --color_950: #1c1153;   
-    --color_900: #311B92;    
-    --color_850: #634499;   
-    --color_800: #4527A0;
-    --color_700: #512DA8;   
-    --color_600: #5E35B1;
-    --color_500: #673AB7;   
-    --color_400: #7E57C2;  
-    --color_300: #9575CD;
-    --color_200: #B39DDB;   
-   
-    --color_90: #EDE7F6;    
-    --color_A100: #EDE7F6;
-    --color_A200: #7C4DFF;
-    --color_A400: #EDE7F6;
-    --color_A500: #faf8fc;
-    --color_50: #6200EA;
-    /*--color_Error: #B00020;*/
-    --color_yellow: #FFDE03;
-    --color_lube: #0336FF;
-    --color_pink: #FF0266;
-
-   
 }
-  
 body {                    
     color: var(--color_base);                     /*цвет шрифта контента*/
     font-family: 'Darker Grotesque', sans-serif;  /*шрифт основной*/
     font-size: var(--font-size-base);             /*размер шрифта контента*/
     font-weight: 400;                             /*тип шрифта (в HTML 400, 500, 600)*/
-    background-color: var(--color_body);
-    /*flex-shrink: 1;*/
+    background-color: var(--color_body);    
 }
-.container {                                  /*контейнер - обертка для контента*/
-    max-width: 1000px;                        /*71.8% или 1360 ширина области просмотра сайта.  Колонка не растянется шире заданного значения, а если места окажется недостаточно — сожмётся*/
-    padding: 0 15px;                           /*внутренний отступ верх+низ и лево+право: граница - элемент*/
-    margin: 0 auto;                            /*внешние отступы обнуляем и задаем авто, т.е. подстройка под размер экрана оборудования*/
-    /*flex-shrink: 0;*/
+.container {                        /*контейнер - обертка для контента*/
+    max-width: 800px;               /*71.8% или 1360 ширина области просмотра сайта.  Колонка не растянется шире заданного значения, а если места окажется недостаточно — сожмётся*/
+    padding: 0 15px;               /*внутренний отступ верх+низ и лево+право: граница - элемент*/
+    margin: 0 auto;                /*внешние отступы обнуляем и задаем авто, т.е. подстройка под размер экрана оборудования*/
 }
 a {
-    transition: all 0.25s ease;             /*плавный переход - анимация*/
-    text-decoration: none;                  /*убираем подчеркивание всех ссылок*/
+    transition: all 0.25s ease;    /*плавный переход - анимация*/
+    text-decoration: none;        /*убираем подчеркивание всех ссылок*/
 }
 p, h1, h2, h3 {
     margin: 0;    
 }
 * {
-    box-sizing: border-box;             /*высоты с учетом отступов padding, margin ко всем элементам*/
+    box-sizing: border-box;       /*высоты с учетом отступов padding, margin ко всем элементам*/
 }
+
 /************************************************/
 /*--------------ШАПКА: page-header = index.html*/
 .page-header {
@@ -90,30 +51,44 @@ p, h1, h2, h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 12px 0 15px 0;
+    /*padding: 12px 0 15px 0;*/
+    height: 140px;
 }
 /*логотип*/
 .page-header__logo {
     display: block;
-    border: 1px solid var(--color_placeholder);
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
-    overflow: hidden;  /*обрезка контента*/
+    border: 2px solid var(--color_placeholderDark);
+    border-radius: 10px;   
+    height: 90px;
+    width: 90px;   
     flex-shrink: 0;    /*не сжимать*/
-    margin-right: 20px;
-    background-color: var(--color_logo);
+    margin-right: 30px;
+    background-color: var(--color_body);
+    /*overflow: hidden;  /*обрезка контента*/
+    /*z-index: 1;                      /*порядок наложения, №2-вверху*/
 }
 .header-logo__box {   
-    height: 90px;      /*заполнение родителя*/
-    width: 90px;       /*заполнение родителя*/
-    margin: 0 auto;    /*выравнивание по центру*/
+    height: 80px;                  /*размеры заполнения картинки*/
+    width: 80px;                   /*размеры заполнения картинки*/
+    margin: 0 auto;                /*выравнивание по центру*/    
+    border-radius: 8px;
+    border: 1px solid var(--color_placeholderDark);
+    position: relative;           /*смещаем элемент относительно своего расположени, т.к. неровные края*/
+    top: 5px;                     /*смещаем вниз*/
+    transform: rotate(45deg);     /*поворот на 45 градусов*/
+    -o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);  
+    background-color: var(--color_logo);   
+    /*z-index: 1;               /*порядок наложения, №1-внизу*/
 }
 .logo-box__img {
-    height: 100%;      /*заполнение родителя*/
-    width: 100%;       /*заполнение родителя*/
-    transform: scaleX(-1);  /*перевернули зеркально картинки*/
+    height: 100%;              /*заполнение родителя*/
+    width: 100%;               /*заполнение родителя*/
+    transform: scaleX(-1) rotate(45grad);  /*две трансформации: зеркальный разворот + разворот на 45 град*/    
 }
+
 /*заголовок*/
 .page-header__title {
     padding-top: 3px;
@@ -134,6 +109,7 @@ p, h1, h2, h3 {
     padding: 0 0 0 100px;
     line-height: 1.8;
 }
+
 /****************************************************/
 /*------СЕКЦИЯ приветствие, знакомство: page-section__welcome = index.html--*/
 .section__welcome p {
@@ -169,9 +145,9 @@ p, h1, h2, h3 {
     border-bottom: 2px solid var(--color_border);
 }
 .section__welcome button {
-    width: 35px;
-    height: 35px;
-    color: var(--color_placeholderDark);
+    width: 40px;
+    height: 40px;
+    color: var(--color_base);
     border-radius: 8px;
     border: 1px solid var(--color_placeholderDark);
     background-color: var(--color_body); 
@@ -182,16 +158,16 @@ p, h1, h2, h3 {
     color: var(--color_border);
     font-weight: 600;
 } 
-.section__welcome a {                      /*ОШИБКА, не применяются стили к ссылке*/
+.section__welcome a {                      
     border-bottom: 1px dotted var(--color_base);
     color: var(--color_base);
     font-size: 18px;
     font-weight: 500;
     font-style: italic;
 }
-.section__welcome a:hover {                      /*ОШИБКА, не применяются стили к ссылке*/
-    border-bottom: 1px solid var(--color_border);
-    /*color: var(--color_border);*/
+.section__welcome a:hover {               /*!!!ОШИБКА, не применяются стили к ссылке*/
+    border-bottom: 2px solid var(--color_border);
+    /*color: var(--color_stsrt);*/
 }
 
 /****************************************************/
@@ -215,12 +191,12 @@ p, h1, h2, h3 {
 }
 .faq-card__toggle {             /*карточка закрытое состояние: строка Заголовок + переключатель*/
     display: flex;              
-    justify-content: space-between;   
+    justify-content: start;   
     align-items: center;
     cursor: pointer;                  /*форма курсора (pointer - рука с пальцем), когда наводишь на кнопку*/
     color: var(--color_title);
     font-size: var(--font-siz-titleR2);             
-    font-weight: 400; 
+    font-weight: 400;     
 }
 .faq-card--opened {             /*карточка открытое состояние: строка Заголовок + переключатель*/
     border: 2px solid var(--color_A200);      
@@ -247,14 +223,19 @@ p, h1, h2, h3 {
 }
 /*переключатель-иконка*/
 .faq-card__toggle--opened .faq-card__icon {  /*разворот иконки +/х в открытом состоянии карточки */
-    transform: rotate(45deg);               /*поворот на 45 градусов + в х*/
+    transform: rotate(45deg);               /*поворот на 45 градусов*/
+    -o-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
 }
 .faq-card__icon {              /*строка 1 в карточке: иконка-переключатель карточки форма вопрос ответ*/
-    width: 35px;               /*ширина*/
-    height: 35px;              /*высота блока*/
+    width: 40px;               /*ширина*/
+    height: 40px;              /*высота блока*/
     border: 1px solid var(--color_placeholderDark);
-    border-radius: 50%;
+    border-radius: 8px;
     background-color: var(--color_body);    
+    margin-left: 75px;
 }
 .faq-card__icon img {
     height: 100%;
@@ -268,9 +249,6 @@ p, h1, h2, h3 {
 
 /****************************************************/
 /*-------СЕКЦИЯ запуск игры: page-section__play = index.html--*/
-/*.page-section__course {
-    margin-bottom: 15px;
-}*/
 .section-play {
     display: flex;
     justify-content: flex-start;
@@ -311,36 +289,25 @@ p, h1, h2, h3 {
 } 
 /**************************************/
 /*Таймер игры: __timer*/
-
-/*.section-play__timer {
-    background-color: var(--color_body);
-}*/
-/*.section-play__timer form {
-   
-   /* text-align: center;             /*выравнивание форм инпут по центру*
-    vertical-align:middle;
-}*/
-.timerplay {    
-    /*vertical-align: middle;         /*выравнивание по центру*/
-    width: 125px;
+.timerplay {        
+    width: 140px;
     height: 35px;
     border: none;
-    color: var(--color_placeholderDark);
-    font-size: 23px;
+    color: var(--color_placeholder);
+    font-size: 25px;
     font-weight: 600;
     background-color: var(--color_body);
-    padding-bottom: 5px;
+    padding-bottom: 1px;
 }    
 .timerplay:disabled {
     background-color: var(--color_body);    /*фон инпута*/
     opacity: 1;                            /*прозрачность*/
 }
-.timerplay-btn {
-    /*vertical-align: middle;         /*выравнивание по центру*/
+.timerplay-btn {    
     height: 35px;
     background-color: var(--color_body);
-    border: 1px solid var(--color_placeholderDark);
-    color: var(--color_placeholderDark);
+    border: 1px solid var(--color_placeholder);
+    color: var(--color_placeholder);
     border-radius: 8px;
     font-weight: 600;
     padding-bottom: 5px;
@@ -354,14 +321,14 @@ p, h1, h2, h3 {
 
 /**************************************/
 /*Счетчик раунд, кол-во ответов верно : неверно __countplay*/
-.section-play__countplay {
-    /*padding-top: 15px;*/    
+.section-play__countplay {      
     width: 250px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin-right: 45px;    
 }
+
 /*счетчик раунд*/
 .countplay__round {
     display: flex;
@@ -375,15 +342,8 @@ p, h1, h2, h3 {
     color: var(--color_title);
     font-size: var(--font-siz-titleЕ);
     font-weight: 600;
-    margin-right: 8px;
-   /* font-weight: 600;
-    font-size: 32px;*/
+    margin-right: 8px;  
 }
-/*.countplay-round__order {
-    margin-right: 5px;
-    font-weight: 600;
-    font-size: 40px;
-}*/
 
 /*счетчик результат - верно : неверно*/
 .countplay-result__list {
@@ -396,9 +356,6 @@ p, h1, h2, h3 {
 .countplay-result__list li {
     padding: 0 10px 6px 10px; 
 }
-/*.countplay-result__list li:last-child {
-    margin-right: 0;
-}*/
 .countplay-result__true,
 .countplay-result__false {
     font-weight: 600;
@@ -454,7 +411,7 @@ p, h1, h2, h3 {
 }
 .count-error__label input {
     width: 200px;
-    background-color: var(--color_Error);    /*ОШИБКА не применяется заливка бегунка*/
+    background-color: var(--color_Error);    /*!!! ОШИБКА не применяется заливка бегунка*/
 }
 .count-error__label input:disabled {
     background-color: var(--color_placeholderDark);
@@ -472,27 +429,17 @@ p, h1, h2, h3 {
 
 .count-error__label div {
     font-weight: 600;
-    font-size: 22px;
+    font-size: 30px;
     width: 80px;    
-    line-height: 16px;                 /*высота строчного элемента*/
+    line-height: 30px;                 /*высота строчного элемента*/
     text-align: end;
     position: relative;
-    bottom: 3px;
+    bottom: 8px;
     /*border: 1px solid grey;         /*ТЕСТ - для проверки-визуализация*/
 }
 
 /**************************************/
 /*Показываем загаданое слово : __quizword*/
-
-/*.section-play {
-    margin-bottom: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    height: 240px;
-    padding: 15px 0 15px 0;         
-}*/
 
 .section-play__quizword {
     margin-bottom: 27px;
@@ -521,13 +468,6 @@ p, h1, h2, h3 {
 .quizword-count__list li:last-child {
     margin-right: 0;
 }
-/*.quizword-count__title,
-.quizword-count__allleters,
-.quizword-count__symbol,
-.quizword-count__trueleter {
-    font-weight: 400;
-    font-size: 23px;    
-}*/
 
 /*заставка слова __list-screen*/
 .quizword-screen__list {
@@ -543,12 +483,10 @@ p, h1, h2, h3 {
     grid-auto-flow: rows;         /*авто-размещения строки*/      
 }
 .quizword-screen__list li {        
-    line-height: 50px;
+    line-height: 42px;
     vertical-align: middle;
     text-align: center;
-    border: 1px solid var(--color_base);   
-    /*float: right;           /* Размещаем по правому краю *
-    margin-right: 5px;*/
+    border: 1px solid var(--color_base);    
     font-size: var(--font-siz-letter);
     font-weight: 600;
     color: rgba(246, 249, 250, 0);   /*прозрачный цвет текста внутри li*/
@@ -556,38 +494,242 @@ p, h1, h2, h3 {
     border-radius: 5px;
     position: relative;               /*размещаем пседо-элемент относительно родителя*/    
 }
-.quizword-screen__list li:hover { 
-    background-color: var(--color_title);
+.quizword-screen__item-hover:hover {         /*при наведении на карточку-буква: меняем цвет + разворачиваем*/
+    background-color: var(--color_stsrt);
     transform: rotate(45deg);    
     -o-transform: rotate(45deg);
 	-ms-transform: rotate(45deg);
 	-moz-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 }
-.quizword-screen__list li::after {          /*псевдо-элемент 'смайлик' на карточке слово-вопрос*/
+.quizword-screen__item-hover::after {        /*создаем на карточку-буква: псевдо-элемент 'солнышко'*/
     content: ""; 
-    background: url('../imgs/icons/smiley.svg') no-repeat center;   
-    background-size: contain;                  /*картинка меняет размеры пропорционально*/
+    background: url('../imgs/icons/sun.svg') no-repeat center;   
+    background-size: contain;                 /*картинка меняет размеры пропорционально*/
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;                            /*ширина*/
     height: 100%;                           /*высота блока*/   
     opacity: 0;                            /*делаем прозрачным до события наведение мышью*/
-    transition: opacity 0.4s ease;
+    transition: opacity 0.4s ease;         /*плавный переход*/
   }
-  .quizword-screen__list li:hover::after {  /*делаем видимыми псевдо-элементы при наведении*/
-    opacity: 1;
-    transform: rotate(-45deg); 
-    -o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-webkit-transform: rotate(-45deg);
+  .quizword-screen__item-hover:hover::after {  /*при наведении на карточку-буква: делаем видимыми псевдо-элемент 'солнышко'*/
+    opacity: 1;    
 }
 
-/*заставка слова __list-question*/
+/**************************************/
+/*Вод буквы игроком: __quiz-letter*/
+.section-play__quiz-letter {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;   
+}
 
-/*.quiz-word__list-question {
+.quiz-letter__label {                   /*стилизация Enter*/
+    color: var(--color_title);
+    font-size: var(--font-siz-titleЕ);
+    font-weight: 600;     
+    padding-right: 25px;  
+    vertical-align: middle;  
+}
+.quiz-letter__input {                   /*стилизация инпут*/
+    width: 85px;
+    height: 60px;    
+    text-align: center !important;    
+    vertical-align: middle !important;  
+    color: var(--color_title);  
+    font-size: var(--font-siz-letter);
+    background-color: var(--color_body);
+    border: 1px solid var(--color_placeholder);
+    font-weight: 600;    
+    border-radius: 10px;
+    margin-right: -4px;
+}
+.quiz-letter__input::placeholder {      /*стилизация подсказки в инпут*/
+    color: var(--color_placeholder);  
+    font-size: 23px;
+    font-style: italic;
+    font-weight: 500;    
+    line-height: 23px;                  /*!!! ОШИБКА не получается выровнить подсказку центр-вертикаль*/
+    text-align: center !important;    
+    vertical-align: middle !important; 
+}
+.quiz-letter__btn {                    /*стилизация кнопки подтверждения*/
+    width: 40px;
+    height: 40px;
+    text-align: center;    
+    font-weight: 600;
+    font-size: 22px;  
+    color: var(--color_placeholder);        
+    background-color: var(--color_body);
+    border: 1px solid var(--color_placeholder);
+    border-radius: 10px; 
+}
+.quiz-letter__input:focus {          /*стилизация инпута при фокусе*/
+    color: var(--color_title);    
+    font-style: italic;
+    font-size: var(--font-siz-titleR2);
+    vertical-align: middle;
+    outline: none !important;               /*контур линии, данное св-во позволяет не мешать установки цвета рамки-border*/
+    border: 2px solid var(--color_border);  /*!!! ОШИБКА цвет рамки инпута в фокусе не меняется*/
+}
+.quiz-letter__input:enabled {           /*применения стиля к доступным (не заблокированным) элементам форм*/
+    border: 2px solid var(--color_border);                       
+    box-shadow: 0 0 5px #2a12a3fa;  
+    font-size: var(--font-siz-letter);
+    vertical-align: middle;
+}
+.quiz-letter__input:hover,          /*стилизация инпута и кнопки при наведении*/
+.quiz-letter__btn:hover {
+    transform: scale(1.5);          /*увеличение размера*/
+    transition: all 0.25s ease;
+    border: 2px solid var(--color_border);    
+    font-weight: 600;
+}
+.quiz-letter__btn:hover {          /*изменение цвета кнопки при наведении*/
+    color: var(--color_border); 
+}
+.quiz-letter__input:hover::placeholder {   /*изменение цвета placeholder при наведении*/
+    color: var(--color_border); 
+}
+
+/**************************************/
+/*Коллекция названных букв: __wordcollection*/
+.page-section__wordcollection {       
+    width: 70%;
+}
+.wordcollection__title {    
+    font-size: var(--font-siz-titleЕ);
+    vertical-align: middle;
+    font-weight: 600;
+    margin-bottom: 10px;    
+    color: var(--color_placeholder); 
+}
+
+/*строка верных/неверных ответов ответов*/
+.wordcollection__true,
+.wordcollection__false {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    vertical-align: middle;   
+    color: var(--color_placeholder); 
+}
+.wordcollection-true__title ,    /*стилизация букв*/
+.wordcollection-false__title {  
+    padding-top: 5px;  
+    font-weight: 500;
+    font-size: 30px;
+    width: 70px;  
+    height: 60px;
+}
+.wordcollection__true {
+    margin-bottom: 8px;
+}
+.wordcollection-true__list,
+.wordcollection-false__list {   
+    list-style: none;
+    margin: 0;
+    padding: 0          
+}
+.wordcollection-true__list li,
+.wordcollection-false__list li {  
+    height: 40px;
+    width: 40px;
+    float: left;         
+    vertical-align: middle;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--color_placeholder);   /*прозрачный цвет текста внутри li*/
+    margin-left: 10px; 
+    border-bottom: 2px solid var(--color_placeholderDark);    
+}
+.wordcollection-false__list li {  
+    border-bottom: 2px solid var(--color_Error);
+}
+
+/**************************************/
+/*Показываем загаданое слово в словаре и ссылку на его значение: __dictionary*/
+.dictionary__word {
+    color: var(--color_title);
+    font-size: var(--font-siz-titleR2);
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.section-play__dictionary a {                      
+    border-bottom: 1px dotted var(--color_base);    
+    color: var(--color_base);
+    font-size: 18px;
+    font-weight: 500;
+    font-style: italic;
+}
+.section-play__dictionary a:hover {         /*при наведении: цвет подчеркивания*/              
+    border-bottom: 2px solid var(--color_border);   
+}
+
+/*ЧЕРНОВИКИ********************/
+/*Цвета
+   --color_logo: #786a92;*
+    --color_logo: rgba(252, 245, 251, 0.26);
+    --color_logoborder: rgba(252, 245, 251, 0.247);
+    --color_logo: #8d88add2;
+    --color_stsrt1: #faf8fc;
+    --color_10: rgb(209, 196, 233, .2); 
+    --color_15: rgba(253, 218, 248, 0.034); 
+    --color_20: rgba(214, 178, 209, 0.7);
+    --color_25: rgba(207, 180, 204, 0.7);   
+    --color_35: rgba(192, 164, 188, 0.815);    
+    --color_40: rgba(243, 230, 241, 0.699);  
+    --color_1005: #401afafa;  
+    --color_950: #1c1153;   
+    --color_900: #311B92;    
+    --color_850: #634499;   
+    --color_800: #4527A0;
+    --color_700: #512DA8;   
+    --color_600: #5E35B1;
+    --color_500: #673AB7;   
+    --color_400: #7E57C2;  
+    --color_300: #9575CD;
+    --color_200: #B39DDB;      
+    --color_90: #EDE7F6;    
+    --color_A100: #EDE7F6;
+    --color_A200: #7C4DFF;
+    --color_A400: #EDE7F6;
+    --color_A500: #faf8fc;
+    --color_50: #6200EA;
+    --color_Error: #B00020;
+    --color_yellow: #FFDE03;
+    --color_lube: #0336FF;
+    --color_pink: #FF0266;
+*/
+
+/*Псевдоэлемент
+.page-header__logo::after {                 /*псевдо-элемент*
+    content: ""; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;                              /*ширина*
+    height: 100%;                             /*высота блока*
+    background-color: var(--color_title);
+    opacity: 0;                              /*делаем прозрачным до события наведение мышью*
+    transition: opacity 0.4s ease;
+  }*/
+
+  /*.section-play {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 240px;
+    padding: 15px 0 15px 0;         
+}*/
+
+/*заставка слова __list-question*
+.quiz-word__list-question {
     list-style: none;     /*убираем маркировку списка*
     padding: 0;           
     margin: 0; 
@@ -606,165 +748,7 @@ p, h1, h2, h3 {
     border-right: none;
 } */
 
-/**************************************/
-/*Вод буквы игроком: __quiz-letter*/
-.section-play__quiz-letter {
-    display: flex;
-    justify-content: flex-start;
-    align-items:center;
-    /*text-align: start; 
-    vertical-align: middle; */   
-}
-
-.quiz-letter__label {
-    /*margin-right: 25px;*/
-    color: var(--color_title);
-    font-size: var(--font-siz-titleЕ);
-    font-weight: 600;     
-    padding-right: 25px;  
-    vertical-align: middle;  
-}
-.quiz-letter__input {
-    width: 85px;
-    height: 60px;
-    /*margin-right: 3px;*/
-    text-align: center;    
-    vertical-align: middle;
-    color: var(--color_title);  
-    font-size: var(--font-siz-letter);
-    background-color: var(--color_body);
-    border: 2px solid var(--color_placeholderDark);
-    font-weight: 600;    
-    border-radius: 10px;
-    margin-right: -4px;
-}
-.quiz-letter__input::placeholder {
-    color: var(--color_placeholderDark);  
-    font-size: 23px;
-    font-style: italic;
-    font-weight: 500;    
-    line-height: 85px;                        /*ОШИБКА НЕ ВЫПАВНИВАЕТСЯ ПО ЦЕНТРУ*/
-    vertical-align: middle;                   /*ОШИБКА НЕ ВЫПАВНИВАЕТСЯ ПО ЦЕНТРУ*/
-}
-.quiz-letter__btn {
-    width: 40px;
-    height: 40px;
-    text-align: center;    
-    font-weight: 600;
-    font-size: 22px;  
-    color: var(--color_placeholderDark);        
-    background-color: var(--color_body);
-    border: 2px solid var(--color_placeholderDark);
-    border-radius: 10px; 
-}
-.quiz-letter__input:focus {    
-    color: var(--color_title);    
-    font-style: italic;
-    font-size: var(--font-siz-titleR2);
-    vertical-align: middle;
-}
-.quiz-letter__input:enabled {
-    border: 2px solid var(--color_border);                       
-    box-shadow: 0 0 5px #2a12a3fa;  
-    font-size: var(--font-siz-letter);
-    vertical-align: middle;
-}
-.quiz-letter__input:hover,
-.quiz-letter__btn:hover {
-    transform: scale(1.5);
-    transition: all 0.25s ease;
-    border: 2px solid var(--color_border);    
-    font-weight: 600;
-}
-.quiz-letter__btn:hover {
-    color: var(--color_border); 
-}
-.quiz-letter__input:hover::placeholder {           /*изменение цвета placeholder при наведении*/
-    color: var(--color_border); 
-}
-/**************************************/
-/*Коллекция названных букв: __wordcollection*/
-.page-section__wordcollection {    
-    /*margin-bottom: 15px;*/ 
-    width: 70%;
-}
-.wordcollection__title {
-    /*color: var(--color_title);*/
-    font-size: var(--font-siz-titleЕ);
-    vertical-align: middle;
-    font-weight: 600;
-    margin-bottom: 10px;    
-    color: var(--color_placeholder); 
-}
-/*строка верных/неверных ответов ответов*/
-.wordcollection__true,
-.wordcollection__false {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    vertical-align: middle;   
-    color: var(--color_placeholder); 
-    /*line-height: 16px;                 /*высота строчного элемента*/    
-    /*padding: 3px 0 0 0;*/
-}
-.wordcollection-true__title ,
-.wordcollection-false__title {  
-    padding-top: 5px;  
-    font-weight: 500;
-    font-size: 30px;
-    width: 70px;  
-    height: 60px;
-}
-/*.wordcollection-false__title {   
-    color: var(--color_Error);
-}*/
-
-.wordcollection__true {
-    margin-bottom: 8px;
-}
-.wordcollection-true__list,
-.wordcollection-false__list {
-    /*width: 50%;*/
-    list-style: none;
-    margin: 0;
-    padding: 0    
-    /*background: #a18ec5;*/    
-}
-.wordcollection-true__list li,
-.wordcollection-false__list li {  
-    height: 40px;
-    width: 40px;
-    float: left;      
-    /*line-height: 50px;*/
-    vertical-align: middle;
-    text-align: center;
-    font-size: 30px;
-    font-weight: 400;
-    color: var(--color_placeholder);   /*прозрачный цвет текста внутри li*/
-    margin-left: 10px; 
-    border-bottom: 1px solid var(--color_placeholderDark);    
-}
-.wordcollection-false__list li {  
-    border-bottom: 1px solid var(--color_Error);
-}
-
-/**************************************/
-/*Показываем загаданое слово в словаре и ссылку на его значение: __dictionary*/
-.dictionary__word {
-    color: var(--color_title);
-    font-size: var(--font-siz-titleR2);
-    font-weight: 500;
-    margin-bottom: 20px;
-}
-.section-play__dictionary a {                      /*ОШИБКА, не применяются стили к ссылке*/
-    border-bottom: 1px dotted var(--color_base);
-    /*color: var(--color_placeholder);*/
-    color: var(--color_base);
-    font-size: 18px;
-    font-weight: 500;
-    font-style: italic;
-}
-.section-play__dictionary a:hover {                      /*ОШИБКА, не применяются стили к ссылке*/
-    border-bottom: 1px solid var(--color_border);
-    /*color: var(--color_border);*/
-}
+/*vertical-align: middle;         /*выравнивание по центру*/
+/*text-align: start;
+/*float: right;           /* Размещаем по правому краю */
+/*line-height: 16px;                 /*высота строчного элемента*/
